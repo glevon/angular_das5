@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "das5"
+    }
+  },
+  "defaultProject": "das5",
+  "cli": {
+    "analytics": "1b1a4ed3-a90f-485d-86d8-58e0919bd98a"
+  }
 }

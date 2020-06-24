@@ -1,0 +1,28 @@
+<input [(ngModel)]="sinp" type="text" placeholder="Search group name" class="form-control m-2 w-50 mx-auto alert-info" >
+
+<div class="card-deck">
+    <div class="card p-3 text-center bg-info" *ngFor="let x of xmber | search:sinp ;index as i">
+        <div class="card-title">
+            <h2>{{x.groupName}}</h2>
+            <h4>{{x.directions}}</h4>
+            <h4>Lecturer:{{x.groupLecturer}}</h4>
+        </div>
+        <div class="card-body">
+            <ul class="list-group ">
+                <li class="list-group-item list-group-item-info" *ngFor="let s of x.student "> 
+                    {{s.name}} {{s.surname}}
+                    <button (click)="delStud(i,s)" class="btn btn-danger">Delate</button>
+                 </li>
+                
+            </ul>
+            <div *ngIf="x.student.length < 6" >
+                <h4 class="text-warning mt-3 ">Add Student</h4>
+                <input type="text" placeholder="Enter name" class="form-control w-50 m-1 mx-auto" [(ngModel)]= "inp[i].name">
+                <input type="text" placeholder="Enter surname" class="form-control w-50 m-1 mx-auto" [(ngModel)]= "inp[i].surname">
+                <button class="btn btn-warning" (click)="addStudent(i)">Add Student</button>
+                <button class="btn btn-danger m-4" (click)="delGroup(i)">Delete group</button>
+
+        </div>
+
+    </div>
+</div>

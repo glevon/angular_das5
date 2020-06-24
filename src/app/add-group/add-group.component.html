@@ -1,0 +1,10 @@
+<div class="w-50 mx-auto card alert-warning p-3 m-2 text-center">
+<h1>Add Group</h1>
+<input [(ngModel)]="xumbInp.groupName" type="text" placeholder="Enter group name" class="form-control m-2" >
+<input [(ngModel)]="xumbInp.directions" type="text" placeholder="Enter group direction" class="form-control m-2">
+<select  [(ngModel)]="xumbInp.groupLecturer"  class="form-control m-2" >
+    <option value="" disabled selected >Choose lecturer</option>
+    <option *ngFor="let l of lecturers"  placeholder="Default input">{{l}}</option>
+</select>
+<button class="btn btn-info m-2 mx-auto" (click)="addGroup()">Add group</button>
+</div>
